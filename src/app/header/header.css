@@ -1,0 +1,29 @@
+header{
+
+background-color: #0e6fd0;
+color: white;
+padding: 10px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+}
+
+header h1,
+header h2,
+header h3,
+header p{
+
+margin: 5px 0;
+
+}
+
+.time{
+
+    text-align: right;
+}
+
+.time h2{
+
+    font-size: 24px;
+}

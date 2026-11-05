@@ -1,0 +1,46 @@
+<div class="container">
+
+  <div class="header">
+    <h2>Registered Students</h2>
+
+    <button (click)="goToAddStudent()">+ Add Student</button>
+  </div>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (student of studentService.students(); track student.id) {
+        <tr>
+          <td>{{ student.id }}</td>
+          <td>{{ student.fullName }}</td>
+          <td>{{ student.email }}</td>
+          <td>{{ student.address }}</td>
+          <td>{{ student.dateOfBirth }}</td>
+          <td>{{ student.gender }}</td>
+          <td>
+            <button (click)="editStudent(student)">Edit</button>
+            <button (click)="deleteStudent(student.id)">Delete</button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="7">No students registered yet.</td>
+        </tr>
+      }
+    </tbody>
+
+  </table>
+
+</div>

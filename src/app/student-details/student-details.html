@@ -1,0 +1,27 @@
+<a routerLink="/" class="back-button">
+  ← Back to Registration
+</a>
+
+
+
+@if (studentService.latestStudent(); as student) {
+
+    <div class="details-container">
+        <h2>Student Registration Details</h2>
+        <p>Here are the details you provided:</p>
+        <p><strong>Full Name:</strong> {{ student.fullName }}</p>
+        <p><strong>Address:</strong> {{ student.address }}</p>
+        <p><strong>Date of Birth:</strong> {{ student.dateOfBirth }}</p>
+        <p><strong>Gender:</strong> {{ student.gender }}</p>
+        <p><strong>Email:</strong> {{ student.email }}</p>
+        <button (click)="goToStudentList()">OK</button>
+
+    </div>
+
+
+}@else {
+
+    <p>No student details available. Please register first</p>
+
+
+}
